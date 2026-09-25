@@ -1,3 +1,8 @@
+# Arquitectura inicial del sistema
+
+## Diagrama de arquitectura
+
+```mermaid
 flowchart TD
 
 %% =========================
@@ -46,63 +51,4 @@ end
 %% =========================
 %% FLUJO PRINCIPAL
 %% =========================
-ACTORES --> PRESENTACION
-PRESENTACION --> NEGOCIO
-NEGOCIO --> DATOS
-
-%% =========================
-%% RELACIONES DE NEGOCIO
-%% =========================
-Usuarios --> BD
-Sellers --> BD
-Catalogo --> BD
-Carrito --> BD
-Pedidos --> BD
-
-%% =========================
-%% INTEGRACIONES EXTERNAS
-%% =========================
-Pedidos -->|"Procesar pago"| Pago
-Pedidos -->|"Gestionar entrega"| Envio
-Catalogo -->|"Consultar productos y stock"| ERP
-
-%% =========================
-%% DISTRIBUCIÓN HORIZONTAL
-%% =========================
-Cliente ~~~ Seller
-Seller ~~~ Admin
-
-Usuarios ~~~ Sellers
-Sellers ~~~ Catalogo
-Catalogo ~~~ Carrito
-Carrito ~~~ Pedidos
-
-Pago ~~~ ERP
-ERP ~~~ Envio
-
-%% =========================
-%% ESTILOS
-%% =========================
-style ACTORES fill:#222,stroke:#fff,stroke-width:2px,color:#fff
-style PRESENTACION fill:#222,stroke:#fff,stroke-width:2px,color:#fff
-style NEGOCIO fill:#222,stroke:#fff,stroke-width:2px,color:#fff
-style DATOS fill:#222,stroke:#fff,stroke-width:2px,color:#fff
-style EXTERNOS fill:#222,stroke:#fff,stroke-width:2px,color:#fff
-
-style Cliente fill:#222,stroke:#fff,color:#fff
-style Seller fill:#222,stroke:#fff,color:#fff
-style Admin fill:#222,stroke:#fff,color:#fff
-
-style Web fill:#222,stroke:#fff,color:#fff
-
-style Usuarios fill:#222,stroke:#fff,color:#fff
-style Sellers fill:#222,stroke:#fff,color:#fff
-style Catalogo fill:#222,stroke:#fff,color:#fff
-style Carrito fill:#222,stroke:#fff,color:#fff
-style Pedidos fill:#222,stroke:#fff,color:#fff
-
-style BD fill:#222,stroke:#fff,color:#fff
-
-style Pago fill:#222,stroke:#fff,color:#fff
-style ERP fill:#222,stroke:#fff,color:#fff
-style Envio fill:#222,stroke:#fff,color:#fff
+ACTORES -->
